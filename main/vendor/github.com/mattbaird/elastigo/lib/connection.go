@@ -156,6 +156,7 @@ func (c *Conn) NewRequest(method, path, query string) (*Request, error) {
 	if err != nil {
 		return nil, err
 	}
+  req.Header.Add("Accept", "*/*")
 	req.Header.Add("Accept", "application/json")
 	req.Header.Add("User-Agent", "elasticSearch/"+Version+" ("+runtime.GOOS+"-"+runtime.GOARCH+")")
 
